@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net8.0-android</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>DeviceTestingKitApp.DeviceTests</RootNamespace>
     <UseMaui>true</UseMaui>
@@ -37,10 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DeviceRunners.UITesting.Maui" Version="0.1.0-preview.2" />
-    <PackageReference Include="DeviceRunners.UITesting.Xunit" Version="0.1.0-preview.2" />
-    <PackageReference Include="DeviceRunners.XHarness.Maui" Version="0.1.0-preview.2" />
-    <PackageReference Include="DeviceRunners.XHarness.Xunit" Version="0.1.0-preview.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -53,6 +48,16 @@
     <ProjectReference Include="..\..\src\DeviceTestingKitApp.MauiLibrary\DeviceTestingKitApp.MauiLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+    <PackageReference Include="DeviceRunners.XHarness.Maui" Version="0.1.0-preview.1" />
+    <PackageReference Include="DeviceRunners.XHarness.Xunit" Version="0.1.0-preview.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+    <PackageReference Include="DeviceRunners.XHarness.Maui" Version="0.1.0-preview.2" />
+    <PackageReference Include="DeviceRunners.XHarness.Xunit" Version="0.1.0-preview.2" />
+  </ItemGroup>
+  
   <Target Name="RemoveVisualStudioTestRunner" BeforeTargets="_ComputeAppxPackagePayload">
     <ItemGroup>
       <_VisualStudioTestRunnerFiles Include="@(PackagingOutputs)" Condition="$([System.String]::Copy('%(PackagingOutputs.FullPath)').Contains('xunit.runner.visualstudio'))" />
