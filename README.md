@@ -1,13 +1,12 @@
 # DeviceTestingKitApp Sample App with NSubstitute
 
 This folder contains a dummy sample app that can be used to run unit tests on an Android device, to demonstrate a 
-problem with CastelProxy `DynamicProxyGenAssembly2` when using NSubstitute to mock internal interfaces.
+problem with CastelProxy `DynamicProxyGenAssembly2` when using NSubstitute to mock internal interfaces and targeting
+`net8.0-android` or `net9.0-android`.
 
 ## Projects
 
-### The `src` Folder
-
-This folder contains two projects:
+The `src` folder contains two projects:
 
 * `DeviceTestingKitApp`  
   This is the main app. It is a simple ".NET MAUI app" with a single non-interactive page.
@@ -15,11 +14,9 @@ This folder contains two projects:
   This is a .NET MAUI class library that contains an internal interface and class that we want to use in an NSubstitute
   test.
 
-### The `test` Folder
-
-This folder contains a `DeviceTestingKitApp.DeviceTests` project containing two trivial tests:
-- One that always passes
-- One that uses NSubstitute to mock an internal class in the `DeviceTestingKitApp.MauiLibrary` project.
+The `test` folder contains a `DeviceTestingKitApp.DeviceTests` project containing two trivial tests:
+- `SuccessfulTest` that always passes
+- `InternalInterfaces_ShouldBeAccessible` that uses NSubstitute to mock an internal class in the `DeviceTestingKitApp.MauiLibrary` project. This test always fails.
 
 To run these tests with XHarness:
 
@@ -59,16 +56,3 @@ System.ArgumentException : Can not create proxy for type DeviceTestingKitApp.IDu
 
 However, the `InternalsVisibleTo` attribute is already defined in DeviceTestingKitApp.MauiLibrary.csproj (which is the
 assembly containing the internal interface and class that CastleProxy needs).
-
-When targeting net7.0-android, we didn't used to have this problem. Unfortunately it's difficult to create a repo that 
-targets both net7.0-android and net8.0-android, due to an error from `Microsoft.DotNet.XHarness.TestRunners.Xunit`:
-
-```
-Package Microsoft.DotNet.XHarness.TestRunners.Xunit 9.0.0-prerelease.24066.3 is not compatible with net7.0-android21.0 (.NETCoreApp,Version=v7.0) / android-arm64. Package Microsoft.DotNet.XHarness.TestRunners.Xunit 9.0.0-prerelease.24066.3 supports: net8.0 (.NETCoreApp,Version=v8.0)
-```
-
-I'm not sure how to conditionally force an earlier version of `Microsoft.DotNet.XHarness.TestRunners.Xunit` to be used 
-when targeting net7.0-android as I can't see where this dependency comes from. I tried installing and older version of
-xharness (8.0.0-prerelease.23326.1) with no effect.
-
-So I've just left the project targeting net8.0-android for now.
