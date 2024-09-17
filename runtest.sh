@@ -10,7 +10,6 @@ dotnet publish test/SimpleApp.DeviceTests/SimpleApp.DeviceTests.csproj \
           -f net8.0-android \
           -r android-arm64 \
           -c Release \
-          -p:AndroidSdkDirectory=/Users/jamescrosswell/Library/Developer/Xamarin/android-sdk-macosx \
           /bl:./artifacts/logs/msbuild-publish.binlog
 
 # Run the tests using xharness

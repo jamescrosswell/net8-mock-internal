@@ -26,7 +26,6 @@ To run these tests with XHarness:
               -f net8.0-android \
               -r android-arm64 \
               -c Release \
-              -p:AndroidSdkDirectory=/Users/jamescrosswell/Library/Developer/Xamarin/android-sdk-macosx \
               /bl:./artifacts/logs/msbuild-publish.binlog
     ```
 
