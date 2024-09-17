@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-
-[assembly: AssemblyKeyFileAttribute("keyfile.snk")]
-
-namespace SimpleApp.StrongLib;
+﻿namespace SimpleApp.StrongLib;
 
 internal interface IPoolGames
 {
