@@ -4,7 +4,7 @@ using SimpleApp.Library;
 
 namespace SimpleApp.DeviceTests.Tests;
 
-public class UnitTests
+public class LibraryTests
 {
 	[Fact]
 	public void SuccessfulTest()

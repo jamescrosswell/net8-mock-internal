@@ -46,6 +46,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\SimpleApp.Library\SimpleApp.Library.csproj" />
+    <ProjectReference Include="..\..\src\SimpleApp.StrongLib\SimpleApp.StrongLib.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
