@@ -9,6 +9,7 @@
 <!--    <TargetFrameworks>net7.0-android;net8.0-android</TargetFrameworks>-->
     <TargetFrameworks>$(TargetFrameworks);net8.0-android</TargetFrameworks>
 <!--    <MauiVersion>8.0.82</MauiVersion>-->
+    <NoWarn>$(NoWarn);CS8002</NoWarn>
   </PropertyGroup>
   
 </Project>

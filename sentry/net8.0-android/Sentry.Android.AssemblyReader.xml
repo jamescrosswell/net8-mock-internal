@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sentry.Android.AssemblyReader</name>
+    </assembly>
+    <members>
+        <member name="M:Sentry.Android.AssemblyReader.AndroidAssemblyReader.TryDecompressLZ4(System.String,System.IO.MemoryStream)">
+            <summary>
+            The DLL may be LZ4 compressed, see https://github.com/xamarin/xamarin-android/pull/4686
+            The format is:
+               [ 4 byte magic header ] (XALZ)
+               [ 4 byte header index ]
+               [ 4 byte uncompressed payload length ]
+               [rest: lz4 compressed payload]
+            </summary>
+            <seealso href="https://github.com/xamarin/xamarin-android/blob/c92702619f5fabcff0ed88e09160baf9edd70f41/tools/decompress-assemblies/main.cs#L26" />
+        </member>
+        <member name="T:Sentry.Android.AssemblyReader.AndroidAssemblyReaderFactory">
+            <summary>
+            A factory that creates an assembly reader for an Android APK.
+            </summary>
+        </member>
+        <member name="M:Sentry.Android.AssemblyReader.AndroidAssemblyReaderFactory.Open(System.String,System.Collections.Generic.IList{System.String},Sentry.Android.AssemblyReader.DebugLogger)">
+            <summary>
+            Opens an assembly reader.
+            </summary>
+            <param name="apkPath">The path to the APK</param>
+            <param name="supportedAbis">The supported ABIs</param>
+            <param name="logger">An optional logger for debugging</param>
+            <returns>The reader</returns>
+        </member>
+        <member name="T:Sentry.Android.AssemblyReader.DebugLogger">
+            <summary>
+            Writes a log message for debugging.
+            </summary>
+            <param name="message">The message string to write.</param>
+            <param name="args">Arguments for the formatted message string.</param>
+        </member>
+        <member name="T:Sentry.Android.AssemblyReader.IAndroidAssemblyReader">
+            <summary>
+            Interface for an object that can read .NET assemblies from an Android APK.
+            </summary>
+        </member>
+        <member name="M:Sentry.Android.AssemblyReader.IAndroidAssemblyReader.TryReadAssembly(System.String)">
+            <summary>
+            Trys to get a <see cref="T:System.Reflection.PortableExecutable.PEReader"/> for a given assembly.
+            </summary>
+            <param name="name">The name of the assembly.</param>
+            <returns>The reader, or <c>null</c> if the assembly could not be found.</returns>
+        </member>
+    </members>
+</doc>
