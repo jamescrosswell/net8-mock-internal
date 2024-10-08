@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sentry.Tests</name>
+    </assembly>
+    <members>
+        <member name="P:Sentry.Tests.HubTestsJsonContext.EvilContext">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.HubTestsJsonContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.HubTestsJsonContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.HubTestsJsonContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:Sentry.Tests.HubTestsJsonContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sentry.Tests.HubTestsJsonContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sentry.Tests.HubTestsJsonContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sentry.Tests.Internals.JsonTests.DataAndNonSerializableObject`1.#ctor(`0,System.Int32,System.String)">
+            <summary>
+            A class containing two objects that can be serialized and a third one that will have issues if serialized.
+            </summary>
+            <param name="obj">A problematic or dangerous data</param>
+            <param name="id">An integer.</param>
+            <param name="data">a String.</param>
+        </member>
+        <member name="M:Sentry.Tests.Internals.JsonTests.DataWithSerializableObject`1.#ctor(`0)">
+            <summary>
+            A class containing three objects that can be serialized.
+            </summary>
+            <param name="obj">The object.</param>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Boolean">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.DataAndNonSerializableObjectAssembly">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.DataWithSerializableObjectException">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.DataWithSerializableObjectType">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.SelfReferencedObject">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.AccessViolationException">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IEnumerableCustomAttributeData">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IEnumerableModule">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IEnumerableTypeInfo">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IEnumerableType">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IListCustomAttributeNamedArgument">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IListCustomAttributeTypedArgument">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.IDictionary">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Exception">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Guid">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.ModuleHandle">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Assembly">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.ConstructorInfo">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.CustomAttributeData">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.CustomAttributeNamedArgument">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.CustomAttributeTypedArgument">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.MemberInfo">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.MethodBase">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.MethodInfo">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Module">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.TypeInfo">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.SecurityRuleSet">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Type">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Int32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Int64">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Object">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:Sentry.Tests.Internals.JsonTestsJsonContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:Sentry.Tests.Internals.JsonTestsJsonContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sentry.Tests.Internals.JsonTestsJsonContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sentry.Tests.Internals.JsonTestsJsonContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Sentry.Tests.Internals.ObjectExtensionsTests">
+            <summary>
+            Copied/Modified from:
+            https://github.com/mentaldesk/fuse/blob/91af00dc9bc7e1deb2f11ab679c536194f85dd4a/MentalDesk.Fuse.Tests/ObjectExtensionsTests.cs
+            </summary>
+        </member>
+        <member name="M:Sentry.Tests.SentryGraphQlTestHelpers.WrapRequestContent(System.String)">
+            <summary>
+            GraphQL Queries get sent in a dictionary using the GraphQL over HTTP protocol
+            </summary>
+        </member>
+        <member name="M:Sentry.Tests.SentryGraphQlTestHelpers.ErrorContent(System.String,System.String)">
+            <summary>
+            e.g.
+            "[{"message":"Query does not contain operation \u0027getAllNotes\u0027.","extensions":{"code":"INVALID_OPERATION","codes":["INVALID_OPERATION"]}}]"
+            </summary>
+        </member>
+    </members>
+</doc>

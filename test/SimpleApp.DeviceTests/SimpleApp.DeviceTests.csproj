@@ -11,6 +11,9 @@
     <ApplicationVersion>1</ApplicationVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../keypair.snk</AssemblyOriginatorKeyFile>
+
+    <SentryAndroidSdkVersion>7.14.0</SentryAndroidSdkVersion>
+    <SentryAndroidSdkDirectory>$(BaseIntermediateOutputPath)sdks\Sentry\Android\$(SentryAndroidSdkVersion)\</SentryAndroidSdkDirectory>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -54,6 +58,58 @@
     <PackageReference Include="DeviceRunners.XHarness.Maui" Version="0.1.0-preview.2" />
     <PackageReference Include="DeviceRunners.XHarness.Xunit" Version="0.1.0-preview.2" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sentry">
+      <HintPath>..\..\sentry\net8.0-android\android-arm64\Sentry.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Android.AssemblyReader">
+      <HintPath>..\..\sentry\net8.0-android\android-arm64\Sentry.Android.AssemblyReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Bindings.Android">
+      <HintPath>..\..\sentry\net8.0-android\android-arm64\Sentry.Bindings.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Testing">
+      <HintPath>..\..\sentry\net8.0-android\android-arm64\Sentry.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Tests">
+      <HintPath>..\..\sentry\net8.0-android\android-arm64\Sentry.Tests.dll</HintPath>
+    </Reference>
+    <ProguardConfiguration Include="..\..\sentry-proguard.cfg" />
+  </ItemGroup>
+
+
+  <Target Name="DownloadSentryAndroidSdk" BeforeTargets="CollectPackageReferences">
+    <DownloadFile
+      SourceUrl="https://repo1.maven.org/maven2/io/sentry/sentry-android-core/$(SentryAndroidSdkVersion)/sentry-android-core-$(SentryAndroidSdkVersion).aar"
+      DestinationFolder="$(SentryAndroidSdkDirectory)"
+      Condition="!Exists('$(SentryAndroidSdkDirectory)sentry-android-core-$(SentryAndroidSdkVersion).aar')"
+      Retries="3"
+    />
+    <DownloadFile
+      SourceUrl="https://repo1.maven.org/maven2/io/sentry/sentry-android-ndk/$(SentryAndroidSdkVersion)/sentry-android-ndk-$(SentryAndroidSdkVersion).aar"
+      DestinationFolder="$(SentryAndroidSdkDirectory)"
+      Condition="!Exists('$(SentryAndroidSdkDirectory)sentry-android-ndk-$(SentryAndroidSdkVersion).aar')"
+      Retries="3"
+    />
+    <DownloadFile
+      SourceUrl="https://repo1.maven.org/maven2/io/sentry/sentry/$(SentryAndroidSdkVersion)/sentry-$(SentryAndroidSdkVersion).jar"
+      DestinationFolder="$(SentryAndroidSdkDirectory)"
+      Condition="!Exists('$(SentryAndroidSdkDirectory)sentry-$(SentryAndroidSdkVersion).jar')"
+      Retries="3"
+    />
+  </Target>
+
+  <ItemGroup>
+    <AndroidLibrary Include="$(SentryAndroidSdkDirectory)sentry-$(SentryAndroidSdkVersion).jar" Bind="false" />
+    <AndroidLibrary Include="$(SentryAndroidSdkDirectory)sentry-android-core-$(SentryAndroidSdkVersion).aar" Bind="false" />
+    <AndroidLibrary Include="$(SentryAndroidSdkDirectory)sentry-android-ndk-$(SentryAndroidSdkVersion).aar" Bind="false" />
+    <AndroidLibrary Include="..\..\lib\sentry-android-supplemental\bin\sentry-android-supplemental.jar" Bind="false" />
+    <AndroidNativeLibrary Include="..\..\lib\sentrysupplemental\bin\arm64-v8a\libsentrysupplemental.so" Abi="arm64-v8a" />
+    <AndroidNativeLibrary Include="..\..\lib\sentrysupplemental\bin\armeabi-v7a\libsentrysupplemental.so" Abi="armeabi-v7a" />
+    <AndroidNativeLibrary Include="..\..\lib\sentrysupplemental\bin\x86\libsentrysupplemental.so" Abi="x86" />
+    <AndroidNativeLibrary Include="..\..\lib\sentrysupplemental\bin\x86_64\libsentrysupplemental.so" Abi="x86_64" />
+  </ItemGroup>  
   
   <Target Name="RemoveVisualStudioTestRunner" BeforeTargets="_ComputeAppxPackagePayload">
     <ItemGroup>
