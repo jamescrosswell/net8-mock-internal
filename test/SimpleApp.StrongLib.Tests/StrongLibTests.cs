@@ -1,8 +1,8 @@
 ﻿using NSubstitute;
 
-using SimpleApp.StrongLib;
+using Xunit;
 
-namespace SimpleApp.DeviceTests.Tests;
+namespace SimpleApp.StrongLib.Tests;
 
 public class StrongLibTests
 {
@@ -16,7 +16,7 @@ public class StrongLibTests
 	public void InternalInterfaces_ShouldBeAccessible()
 	{
 		// Arrange
-		var sut = Substitute.For<IPoolGames>();
+		var sut = Substitute.For<StrongLib.IPoolGames>();
 		sut.Marco().Returns("Polo");
 		
 		// Act

@@ -6,9 +6,6 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <CheckEolWorkloads>false</CheckEolWorkloads>
-<!--    <TargetFrameworks>net7.0-android;net8.0-android</TargetFrameworks>-->
-    <TargetFrameworks>$(TargetFrameworks);net8.0-android</TargetFrameworks>
-<!--    <MauiVersion>8.0.82</MauiVersion>-->
   </PropertyGroup>
   
 </Project>

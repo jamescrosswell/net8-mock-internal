@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using SimpleApp.StrongLib.Tests;
+
 namespace SimpleApp.DeviceTests;
 
 public static class MauiProgram
@@ -12,6 +14,7 @@ public static class MauiProgram
 		builder
 			.UseXHarnessTestRunner(conf => conf
 				.AddTestAssembly(typeof(MauiProgram).Assembly)
+				.AddTestAssembly(typeof(StrongLibTests).Assembly)
 				.AddXunit());
 
 #if DEBUG

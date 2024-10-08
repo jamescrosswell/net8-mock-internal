@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFrameworks>$(TargetFrameworks);net8.0-android</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>SimpleApp.DeviceTests</RootNamespace>
     <UseMaui>true</UseMaui>
@@ -34,6 +35,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\SimpleApp.Library\SimpleApp.Library.csproj" />
     <ProjectReference Include="..\..\src\SimpleApp.StrongLib\SimpleApp.StrongLib.csproj" />
+    <ProjectReference Include="..\SimpleApp.StrongLib.Tests\SimpleApp.StrongLib.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
